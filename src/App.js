@@ -3,20 +3,12 @@ import './App.css';
 import Input from './components/Input'
 import TodoItem from './components/TodoItem'
 
-const todoList = [
-  {
-    item: 'clean up',
-    done: false,
-    id: 32534457546
-  },
-  {
-    item: 'get beans',
-    done: true,
-    id: 5656643654
-  }
-]
+import { useSelector } from 'react-redux'
+import { selectTodoList } from './features/todoSlice'
 
 function App() {
+  const todoList = useSelector(selectTodoList)
+  
   return (
     <div className="app">
       <div className="app__container">
